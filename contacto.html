@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contacto de Luci&eacute;rnagas Weddings para solicitar informaci&oacute;n, disponibilidad y una primera llamada."
+    />
+    <title>Contacto | Luci&eacute;rnagas Weddings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header brand-always-visible">
+      <a class="brand" href="index.html" aria-label="Luci&eacute;rnagas Weddings inicio">
+        <img class="brand-logo" src="assets/logo-luciernaga-icon-transparent.png" alt="" />
+        <img class="brand-wordmark" src="assets/logo-luciernagas-wordmark-transparent.png" alt="" />
+      </a>
+
+      <nav class="main-nav" aria-label="Navegaci&oacute;n principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#nos-conocemos">&iquest;Nos conocemos?</a>
+        <a href="servicios.html">Servicios</a>
+        <a class="active" href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="header-socials" aria-label="Redes sociales">
+        <a class="social-link" href="https://www.instagram.com/luciernagas.weddings?utm_source=ig_web_button_share_sheet&amp;igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.4" cy="6.6" r="1.1"></circle>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@luciernagas.weddings?_t=ZG-8seu7Srlqwi&amp;_r=1&amp;fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaco1T0WmtzSLE12DjQCRgjSGWzo_hNPeIAAAsv05DdQPenf74uvQYeKgnq4DQ_aem_tmlvGW0ZbyydqlCpi2fKIQ" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 3v10.2a4.8 4.8 0 1 1-4.8-4.8"></path>
+            <path d="M14 6.2c1.3 2 3.1 3.1 5.3 3.3"></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="contact-layout" data-reveal>
+        <div class="contact-copy">
+          <h1>Contadnos c&oacute;mo imagin&aacute;is vuestro d&iacute;a.</h1>
+          <p>
+            Si ten&eacute;is alguna duda, escribidme y estar&eacute; encantada de ayudaros.
+            Tambi&eacute;n podemos concertar una reuni&oacute;n inicial por videollamada o de
+            forma presencial para conocernos mejor.
+          </p>
+
+          <div class="contact-details" aria-label="Datos de contacto">
+            <p><strong>Tel&eacute;fono</strong> 697 75 22 89</p>
+            <p><strong>Email</strong> info@luciernagasweddings.com</p>
+            <p><strong>Instagram</strong> @luciernagas.weddings</p>
+            <p><strong>Base</strong> Bodas en Espa&ntilde;a y destinos especiales</p>
+          </div>
+        </div>
+
+        <figure class="contact-image">
+          <img
+            src="assets/Contacto.jpeg"
+            alt="Luc&iacute;a preparando detalles de una mesa de boda"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <form class="contact-form" action="/api/contact" method="post">
+          <label>
+            Nombre del cliente
+            <input type="text" name="nombre" autocomplete="name" placeholder="Vuestro nombre" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" placeholder="vuestro@email.com" required />
+          </label>
+          <label>
+            Fecha prevista
+            <input type="text" name="fecha" placeholder="Primavera de 2027" required />
+          </label>
+          <label>
+            Mensaje
+            <textarea name="mensaje" rows="5" placeholder="Queremos una boda..." required></textarea>
+          </label>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <button type="submit">Enviar consulta</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Luci&eacute;rnagas Weddings</p>
+      <div class="footer-links">
+        <a href="servicios.html">Ver servicios</a>
+      </div>
+      <p class="site-credit">Web dise&ntilde;ada por pablosg-5.</p>
+    </footer>
+    <script src="nav.js"></script>
+    <script src="contacto.js"></script>
+  </body>
+</html>
