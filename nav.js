@@ -1,6 +1,8 @@
 const siteHeader = document.querySelector(".site-header");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+document.documentElement.classList.add("js");
+
 function updateHeaderBrand() {
   if (!siteHeader) {
     return;
@@ -73,7 +75,40 @@ function enableParallax() {
   window.addEventListener("resize", requestUpdate);
 }
 
+function enableTestimonials() {
+  const testimonialItems = [...document.querySelectorAll("[data-testimonial-group]")];
+  const previousButton = document.querySelector("[data-testimonial-prev]");
+  const nextButton = document.querySelector("[data-testimonial-next]");
+
+  if (!testimonialItems.length || !previousButton || !nextButton) {
+    return;
+  }
+
+  const groups = [...new Set(testimonialItems.map((item) => item.dataset.testimonialGroup))];
+  const mobileTestimonials = window.matchMedia("(max-width: 560px)");
+  let activeIndex = 0;
+
+  function showGroup(index) {
+    activeIndex = (index + groups.length) % groups.length;
+    const activeGroup = groups[activeIndex];
+    const visibleLimit = mobileTestimonials.matches ? 2 : 4;
+    const activeItems = testimonialItems.filter((item) => item.dataset.testimonialGroup === activeGroup);
+
+    testimonialItems.forEach((item) => {
+      const isActive = item.dataset.testimonialGroup === activeGroup && activeItems.indexOf(item) < visibleLimit;
+      item.hidden = !isActive;
+      item.classList.toggle("is-active", isActive);
+    });
+  }
+
+  previousButton.addEventListener("click", () => showGroup(activeIndex - 1));
+  nextButton.addEventListener("click", () => showGroup(activeIndex + 1));
+  mobileTestimonials.addEventListener("change", () => showGroup(activeIndex));
+  showGroup(0);
+}
+
 updateHeaderBrand();
 revealContent();
 enableParallax();
+enableTestimonials();
 window.addEventListener("scroll", updateHeaderBrand, { passive: true });

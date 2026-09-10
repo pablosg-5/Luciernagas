@@ -1,2 +1,6 @@
 .env
 node_modules/
+.agents/
+tmp/
+nbproject/
+assets/portfolio/
